@@ -11,7 +11,7 @@ const { mobile } = useDisplay()
 <AppLayout>
   <template #content>
     <v-row>
-       <v-col cols="12" md="6" class="mx-auto pt-16" v-if="!mobile"> 
+       <v-col cols="12" md="6" class="mx-auto pt-16"> 
         <v-card class="mx-auto" elevation="24">
                 <v-card-title class="text-center">
                   <v-img class="mx-auto" src="/images/logo.jpg"
