@@ -16,7 +16,7 @@ const { mobile } = useDisplay()
             <v-col cols="12" md="4" :class="mobile ? '' : 'pt-16' ">
               <v-card class="mx-auto" elevation="0" max-width="600">
                 <v-card-title class="text-center">
-                  <v-img class="mx-auto" src="/images/logo-fabrique.png"
+                  <v-img class="mx-auto" src="/public/images/logo.jpg"
                   :width="mobile ? '75%' : '25%'"
                   ></v-img>
                   <h3 class="font-weight-black ">QServe</h3>
