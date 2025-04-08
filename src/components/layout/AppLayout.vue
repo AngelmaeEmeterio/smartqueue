@@ -2,17 +2,16 @@
 import { ref } from 'vue'
 
 // Get the theme from localStorage or default to 'light'
-const theme = ref(localStorage.getItem('theme') ?? 'light')
+const theme = ref('light')
 
 // Toggle the theme and store it
 function onClick() {
   theme.value = theme.value === 'light' ? 'dark' : 'light'
-  localStorage.setItem('theme', theme.value)
 }
 </script>
 
 <template>
-  <v-responsive>
+  <v-responsive class="border rounded">
     <v-app :theme="theme">
       <!-- App Bar -->
       <v-app-bar
@@ -34,7 +33,9 @@ function onClick() {
 
       <!-- Main Content -->
       <v-main>
-        <slot name="content"></slot>
+        <v-container>
+          <slot name="content"></slot>
+        </v-container>
       </v-main>
 
       <!-- Footer -->
