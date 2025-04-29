@@ -14,9 +14,12 @@ const { mobile } = useDisplay()
           <v-col cols="12" md="6" class="mx-auto pt-16"> 
             <v-card class="mx-auto" elevation="24">
                 <v-card-title class="text-center">
-                  <v-img class="mx-auto" src="/images/logo.jpg"
-                  :width="mobile ? '75%' : '25%'"
-                  ></v-img>
+                  <v-img
+                    src="/images/logo.png"
+                    width="80"
+                    class="mx-auto mb-4"
+                    contain
+                  />
                   <h3 class="font-weight-black ">QServe</h3>
                   <p class="font-weight-bold">Registration Form</p>
 

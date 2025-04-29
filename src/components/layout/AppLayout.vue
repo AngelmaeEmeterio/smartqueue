@@ -46,7 +46,7 @@ function onClick() {
         border
         app
       >
-        2025 - QServre
+        2025 - QServe
       </v-footer>
     </v-app>
   </v-responsive>
