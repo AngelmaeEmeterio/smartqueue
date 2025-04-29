@@ -18,7 +18,7 @@ const { mobile } = useDisplay()
                   :width="mobile ? '75%' : '25%'"
                   ></v-img>
                   <h3 class="font-weight-black ">QServe</h3>
-                  <p class="font-weight-bold">Login Form</p>
+                  <p class="font-weight-bold">Login Forms</p>
 
                 </v-card-title>
 
