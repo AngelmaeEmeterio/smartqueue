@@ -9,7 +9,6 @@ const { mobile } = useDisplay()
 <template>
 <AppLayout>
   <template #content>
-
          <v-row>
           <v-col cols="12" md="6" class="mx-auto pt-16"> 
             <v-card class="mx-auto" elevation="24">
@@ -18,7 +17,7 @@ const { mobile } = useDisplay()
                   :width="mobile ? '75%' : '25%'"
                   ></v-img>
                   <h3 class="font-weight-black ">QServe</h3>
-                  <p class="font-weight-bold">Registration Form</p>
+                  <p class="font-weight-bold">Registration Forms</p>
 
                 </v-card-title>
 

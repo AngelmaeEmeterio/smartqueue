@@ -1,4 +1,4 @@
-<!--<script setup>
+<script setup>
 import { ref } from 'vue'
 
 const isPasswordVisible = ref(false)
@@ -20,4 +20,3 @@ const isPasswordVisible = ref(false)
                     <v-btn class="mt-2" type="submit" block color="blue-darken-4" prepend-icon="mdi-login">Login</v-btn>
                   </v-form>
 </template>
--->

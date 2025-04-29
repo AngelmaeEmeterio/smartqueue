@@ -1,4 +1,4 @@
-<!--<script setup>
+<script setup>
 import { ref } from 'vue'
 
 const isPasswordVisible = ref(false)
@@ -46,4 +46,3 @@ const isPasswordConfirmVisible = ref(false)
                   </v-form>
 
 </template>
--->
