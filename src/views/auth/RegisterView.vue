@@ -1,6 +1,6 @@
 <script setup>
 import AppLayout from '@/components/layout/AppLayout.vue'
-import RegisterForm from '@/components/auth/RegisterForm.vue'
+import RegisterForm from '@/components/auth/RegisterForm.vue' // ← un-comment this
 import { useDisplay } from 'vuetify'
 
 const { mobile } = useDisplay()
@@ -22,12 +22,13 @@ const { mobile } = useDisplay()
               <h3 class="font-weight-black">QServe</h3>
               <p class="font-weight-bold">Registration Form</p>
             </v-card-title>
+
             <v-card-text class="pt-4">
               <v-divider class="my-5" />
-              <!-- RegisterForm will be added later -->
+              <RegisterForm />
               <v-divider class="my-5" />
               <h5 class="text-center">
-                Already have an account?
+                Already have account?
                 <RouterLink
                   class="text-blue-lighten-2 font-weight-black"
                   to="/"
