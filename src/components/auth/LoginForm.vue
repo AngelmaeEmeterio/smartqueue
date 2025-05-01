@@ -13,7 +13,7 @@ const isPasswordVisible = ref(false)
                       prepend-inner-icon="mdi-lock"
                       label="Password"
                       :type="isPasswordVisible ? 'text' : 'password'"
-                      :append-inner-icon="isPasswordVisible ? 'mdi-eye-off' : 'mdi-eye' "
+                      :append-inner-icon="isPasswordVisible ? 'mdi-eye-off' : 'mdi-eye'"
                       @click:append-inner="isPasswordVisible = !isPasswordVisible"
                     ></v-text-field>
 
