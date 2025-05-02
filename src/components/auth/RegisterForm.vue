@@ -3,7 +3,8 @@ import {
   requiredValidator,  
   emailValidator,  
   passwordValidator, 
-  confirmedValidator} 
+  confirmedValidator
+} 
   from '@/utils/validators'
 import { ref } from 'vue'
 
