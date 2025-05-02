@@ -46,7 +46,7 @@ export const isEmpty = (value) => {
     return re.test(String(value)) || 'The Email field must be a valid email address'
   }
   
-  // 👉 Password Validator
+  //👉 Password Validator
   export const passwordValidator = (password) => {
     const regExp = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%&*()]).{8,}/
     const validPassword = regExp.test(password)

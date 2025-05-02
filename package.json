@@ -9,6 +9,7 @@
     "preview": "vite preview",
     "lint": "eslint . --fix",
     "format": "prettier --write src/"
+    
   },
   "dependencies": {
     "pinia": "^3.0.1",
