@@ -1,6 +1,18 @@
 <script setup>
 import { ref } from 'vue'
 
+const formDataDefault = {
+  firstname: '',
+  lastname: '',
+  email: '',
+  password: '',
+  password_confirmation: ''
+}
+
+const formData = ref({
+  ...formDataDefault
+})
+
 const name = ref('')
 const email = ref('')
 const programYear = ref('')
