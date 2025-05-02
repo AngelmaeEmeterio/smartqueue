@@ -13,8 +13,7 @@ const { mobile } = useDisplay()
         <v-col cols="12" md="6" class="mx-auto pt-16">
           <v-card class="mx-auto" elevation="24">
             <v-card-title class="text-center">
-              <v-img
-                src="/images/logo.png"
+              <v-img src="/images/logo.png"
                 width="80"
                 class="mx-auto mb-4"
                 contain
