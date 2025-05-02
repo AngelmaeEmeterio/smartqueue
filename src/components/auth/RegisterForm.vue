@@ -1,11 +1,4 @@
 <script setup>
-import { 
-  requiredValidator,  
-  emailValidator,  
-  passwordValidator, 
-  confirmedValidator
-} 
-  from '@/utils/validators'
 import { ref } from 'vue'
 
 const formDataDefault = {
@@ -20,72 +13,52 @@ const formData = ref({
   ...formDataDefault
 })
 
-const isPasswordVisible = ref(false)
-const isPasswordConfirmVisible = ref(false)
-const refVForm = ref()
-
-const onLogin = () => {
-  alert(formData.value.email)
-}
-
-const onSubmit = () => {
-    refVForm.value?.validate().then(({ valid }) => {
-        if (valid) onLogin()
-    })
-}
+const name = ref('')
+const email = ref('')
+const programYear = ref('')
+const studentId = ref('')
+const password = ref('')
 </script>
 
 <template>
-  <v-form ref="refVForm" @submit.prevent = "onSubmit">
-    <v-row>
-      <v-col cols="12" md="6">
-        <v-text-field v-model="formData.firstname" label="Firstname" :rules="[requiredValidator]"></v-text-field>
-      </v-col>
+  <v-form>
+    <v-text-field
+      v-model="name"
+      label="Full Name"
+      prepend-icon="mdi-account"
+      required
+    />
 
-      <v-col cols="12" md="6">
-        <v-text-field v-model="formData.lastname" label="Lastname" :rules="[requiredValidator]"></v-text-field>
-      </v-col>
+    <v-text-field
+      v-model="email"
+      label="Email"
+      type="email"
+      prepend-icon="mdi-email"
+      required
+    />
 
-      <v-col cols="12">
-        <v-text-field 
-        v-model="formData.email" 
-        label="Email" prepend-inner-icon="mdi-email"
-        :rules="[requiredValidator, emailValidator]"
-        ></v-text-field>
-      </v-col>
+    <v-text-field
+      v-model="programYear"
+      label="Program & Year (e.g. BSIT 3rd Year)"
+      prepend-icon="mdi-school"
+      required
+    />
 
-      <v-col cols="12" md="6">
-        <v-text-field 
-        v-model="formData.password"
-          prepend-inner-icon="🔒"
-          label="Password"
-          :type="isPasswordVisible ? 'text' : 'password'"
-          :append-inner-icon="isPasswordVisible ? 'mdi-eye-off' : 'mdi-eye'"
-          @click:append-inner="isPasswordVisible = !isPasswordVisible"
-          :rules="[requiredValidator, passwordValidator]"
-        ></v-text-field>
-      </v-col>
-    
-    <v-col cols="12" md="6">
-  <v-text-field 
-  v-model="formData.password_confirmation"
-    label="Password Confirmation"
-    :type="isPasswordConfirmVisible ? 'text' : 'password'"
-    :append-inner-icon="isPasswordConfirmVisible ? 'mdi-eye-off' : 'mdi-eye'"
-    @click:append-inner="isPasswordConfirmVisible = !isPasswordConfirmVisible"
-    :rules="[requiredValidator, confirmedValidator(formData.password_confirmation, formData.password)]"
-  ></v-text-field>
-  </v-col>
-</v-row>
+    <v-text-field
+      v-model="studentId"
+      label="Student ID"
+      prepend-icon="mdi-card-account-details"
+      required
+    />
 
-<v-btn
-  class="mt-2"
-  type="submit"
-  block
-  color="blue-lighten-2"
-  prepend-icon="mdi-account-plus"
+    <v-text-field
+      v-model="password"
+      label="Password"
+      type="password"
+      prepend-icon="mdi-lock"
+      required
+    />
 
-  Register
-></v-btn>
-</v-form>
+    <v-btn color="primary" class="mt-4" block>Register</v-btn>
+  </v-form>
 </template>
