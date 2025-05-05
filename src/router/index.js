@@ -17,10 +17,10 @@ const router = createRouter({
       component: RegisterView,
     },
     {
-          path: '/dashboard',
-          name: 'dashboard',
-          component: DashboardView,
-        },
+    path: '/dashboard',
+    name: 'dashboard',
+    component: DashboardView,
+    },
         // {
         //   path: '/queue-status',
         //   name: 'Status',
