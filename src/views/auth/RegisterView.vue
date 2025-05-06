@@ -9,9 +9,10 @@ const { mobile } = useDisplay()
 <template>
   <AppLayout>
     <template #content>
+      <div class="login-background d-flex align-center justify-center" style="min-height: 100vh;">
       <v-row>
         <v-col cols="12" md="6" class="mx-auto pt-16">
-          <v-card class="mx-auto" elevation="24">
+          <v-card class="mx-auto" elevation="8" style="background-color: rgba(255, 255, 255, 0.6); backdrop-filter: blur(8px);">
             <v-card-title class="text-center">
               <v-img src="/images/logo.png"
                 width="80"
@@ -39,6 +40,15 @@ const { mobile } = useDisplay()
           </v-card>
         </v-col>
       </v-row>
+    </div>
     </template>
   </AppLayout>
 </template>
+
+<style scoped>
+.login-background {
+  background-image: url('/smartqueue/public/images/background.jpg');
+  background-size: cover;
+  background-position: center;
+}
+</style>
