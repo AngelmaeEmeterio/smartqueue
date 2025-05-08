@@ -25,42 +25,28 @@ export const isEmpty = (value) => {
     obj !== null && !!obj && typeof obj === 'object' && !Array.isArray(obj)
   
   // 👉 Required Validator
-  export const requiredValidator = (value) => {
-    if (isNullOrUndefined(value) || isEmptyArray(value) || value === false)
-      return 'This field is required'
-  
-    return !!String(value).trim().length || 'This field is required'
-  }
+  export const requiredValidator = (v) => !!v || 'This field is required'
   
   // 👉 Email Validator
-  export const emailValidator = (value) => {
-    if (isEmpty(value)) return true
-  
-    const re =
-      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    if (Array.isArray(value))
-      return (
-        value.every((val) => re.test(String(val))) || 'The Email field must be a valid email address'
-      )
-  
-    return re.test(String(value)) || 'The Email field must be a valid email address'
+  export const emailValidator = (v) => {
+    const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    return !v || pattern.test(v) || 'Please enter a valid email address'
   }
   
   //👉 Password Validator
-  export const passwordValidator = (password) => {
-    const regExp = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%&*()]).{8,}/
-    const validPassword = regExp.test(password)
-  
-    return (
-      // eslint-disable-next-line operator-linebreak
-      validPassword ||
-      'The password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, one number, and one special character.'
-    )
+  export const passwordValidator = (v) => {
+    if (!v) return true
+    if (v.length < 8) return 'Password must be at least 8 characters'
+    if (!/[A-Z]/.test(v)) return 'Password must contain at least one uppercase letter'
+    if (!/[a-z]/.test(v)) return 'Password must contain at least one lowercase letter'
+    if (!/[0-9]/.test(v)) return 'Password must contain at least one number'
+    return true
   }
   
   // 👉 Confirm Password Validator
-  export const confirmedValidator = (value, target) =>
-    value === target || 'The Confirm Password field confirmation does not match'
+  export const confirmedValidator = (value, target) => {
+    return (v) => v === target || 'Passwords do not match'
+  }
   
   // 👉 Between Validator
   export const betweenValidator = (value, min, max) => {
